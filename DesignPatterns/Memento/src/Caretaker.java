@@ -12,7 +12,7 @@ public class Caretaker {
         savedStates.add(originator.saveToMemento());
         originator.set("State 2");
         savedStates.add(originator.saveToMemento());
-        originator.set("State 2");
+        originator.set("State 3");
         savedStates.add(originator.saveToMemento());
 
         originator.restoreFromMemento(savedStates.get(1));

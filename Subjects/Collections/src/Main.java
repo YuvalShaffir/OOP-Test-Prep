@@ -217,12 +217,7 @@ public class Main {
         }};
 
         System.out.println(map.get("john"));
-        map.compute("john", new BiFunction<String, String, String>() {
-            @Override
-            public String apply(String s, String s2) {
-                return "Not a " + s2;
-            }
-        });
+        map.compute("john", (s, s2) -> "Not a " + s2);
         System.out.println(map.get("john"));
 
         // if the key exists! computer a new value using a mapping BiFunction

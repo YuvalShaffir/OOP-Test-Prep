@@ -8,9 +8,7 @@ class Solution{
             sum += num.doubleValue();
         }
         return sum;
-
     }
-
 }
 
 class Main{

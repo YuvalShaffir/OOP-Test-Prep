@@ -104,13 +104,12 @@ interface SmartPhoneProcedure{
     void execute(SmartPhone p, String[] args);
 }
 
-class SimplePPP{
-    private final Contact primaryContact;
+class SimplePPP extends  SimplePhone{
     private SmartPhone smartPhone;
     private HashMap<String, SmartPhoneProcedure> procedures;
 
     public SimplePPP(Contact primaryContact){
-        this.primaryContact = primaryContact;
+        super(primaryContact);
         this.smartPhone = new SmartPhone();
         this.smartPhone.addContact(primaryContact);
         this.procedures = new HashMap<>();

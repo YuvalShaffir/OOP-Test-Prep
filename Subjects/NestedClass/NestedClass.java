@@ -2,7 +2,9 @@ package NestedClass;
 
 class OuterClass {
     static int staticField;
-    int nonStaticField;
+    public int nonStaticField;
+    StaticNestedClass nested = new StaticNestedClass();
+
 
     void outerMethod() {
         System.out.println("Outer method");
@@ -13,10 +15,11 @@ class OuterClass {
     }
 
     private static class StaticNestedClass {
-        // Can access staticField directly
         void method() {
+            // Can access outer-class staticField directly
             int x = staticField;
-            // Cannot access nonStaticField directly
+
+            // Cannot access nonStaticField outer-class directly
             // int y = nonStaticField; // Error
 
             new OuterClass().outerMethod(); // can access outclass methods
@@ -25,7 +28,7 @@ class OuterClass {
         }
     }
 
-    private class InnerClass {
+    public class InnerClass {
         // Can access both staticField and nonStaticField directly
         void method() {
             int x = staticField;
@@ -35,8 +38,10 @@ class OuterClass {
 }
 
 
-class Main{
-    public static void main(String[] args) {
-
+class Test{
+    public void method(){
+        // TODO: Inner class is a non-static inner class!!!
+        OuterClass outer = new OuterClass();
+        OuterClass.InnerClass inner = outer.new InnerClass();
     }
 }

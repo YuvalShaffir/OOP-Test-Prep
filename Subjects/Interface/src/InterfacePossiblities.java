@@ -1,7 +1,11 @@
 public interface InterfacePossiblities {
 //    private static int STATIC_FIELD = 9; // Modifier 'private' not allowed here
+//    default String age = 0; // Modifier 'default' not allowed here
     static final int FINAL_STATIC_FIELD = 9; // Modifier 'final' is redundant for interface fields.
     static String STATIC_FIELD = "this is STATIC FIELD";
+    public static int age = 3; // Modifier 'static' is redundant for interfaces
+    public int age2 = 3;
+    int age3 = 4;
 
     void method(); //will be overrided in the implementing class
 
